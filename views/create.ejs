@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/css/style.css' />
+  <link rel='stylesheet' href='/js/utilies.css' />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Crear</title>
+</head>
+
+<body>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark primary-color nav-shop">
+
+    <!-- Navbar brand -->
+    <a href="/"><img src="images/logo.png" alt="" class="logo-navbar"></a>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Inicio
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users">Usuarios</a>
+        </li>
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false" href="/products">Productos</a>
+          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <% products.forEach(product =>{%>
+            <a class="dropdown-item" href="/<%= product.type %>"><%= product.type %></a>
+            <% })%>
+          </div>
+        </li>
+
+      </ul>
+      <!-- Links -->
+
+      <form class="form-inline">
+        <div class="md-form my-0">
+          <a href="" class="logo-user-navbar">Usuario <img src="images/user.png" alt=""></a>
+          <a href="" class="logo-user-navbar">Administrador <img src="images/computer.png" alt=""></a>
+        </div>
+      </form>
+    </div>
+    <!-- Collapsible content -->
+
+  </nav>
+  <!-- Navbar End -->
+  <!-- Form -->
+  <h1 class="title-mod">Añadir nuevos Registros</h1>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-8 mb-4 margin-auto">
+          <ul class="nav md-pills nav-justified pills-primary font-weight-bold">
+            <li class="nav-item form-btn">
+              <a class="nav-link active" id="btn-form" data-toggle="tab" href="#tabCheckoutBilling123" role="tab"
+                onclick="selectBtn(this)">Crear Usuario</a>
+            </li>
+            <li class="nav-item form-btn">
+              <a class="nav-link " id="btn-form" data-toggle="tab" href="#tabCheckoutAddons123" role="tab">Crear
+                Productos</a>
+            </li>
+          </ul>
+          <div class="tab-content pt-4">
+            <!--Panel 1-->
+            <div class="tab-pane fade in show active _form" id="tabCheckoutBilling123" role="tabpanel">
+              <form action="/create/user" method="POST">
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label for="name" class="">Nombre</label>
+                    <input type="text" id="firstName" class="form-control" name="name">
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label for="lastname" class="">Apellido</label>
+                    <input type="text" id="lastName" class="form-control" name="lastname">
+                  </div>
+                </div>
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                  </div>
+                  <input type="text" class="form-control py-0" placeholder="Username" aria-describedby="basic-addon1"
+                    name="username">
+                </div>
+                <label for="email" class="">Email</label>
+                <input type="text" id="email" class="form-control mb-4" placeholder="youremail@example.com"
+                  name="email">
+                <label for="address" class="">Contraseña</label>
+                <input type="password" class="form-control mb-4" name="pass">
+                <div class="mb-1">
+                  <label class='input-check'>
+                    <input type='radio' name='is_admin' value='1'><span>Administrador</span>
+                  </label>
+                </div>
+                <div class="mb-1">
+                  <label class='input-check'>
+                    <input type='radio' name='is_admin' value='0'><span>No Administrador</span>
+                  </label>
+                </div>
+                <hr>
+                <input type="submit" class="margin-top-btn-form-submit" value="Crear Usuario">
+              </form>
+            </div>
+            <!--/.Panel 1-->
+
+            <!--Panel 2-->
+            <div class="tab-pane fade _form" id="tabCheckoutAddons123" role="tabpanel">
+              <form action="/create/productos" method="POST" enctype="multipart/form-data">
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label for="">Nombre Producto</label>
+                    <input type="text" id="firstName" class="form-control" name="name_product">
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label for="">Marca</label>
+                    <input type="text" id="lastName" class="form-control" name="brand">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label for="">Tipo</label>
+                    <label class='input-select'>
+                      <select name='type'>
+                        <option value='PC'>PC</option>
+                        <option value='Consola'>Consola</option>
+                        <option value='Movil'>Movil</option>
+                        <option value='Tv'>Tv</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label for="lastName" class="">Precio</label>
+                    <input type="number" id="lastName" class="form-control" name="price">
+                  </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label for="lastName" class="">Desdripción</label>
+                  <hr>
+                  <textarea name="description" clos="50" rows="4"></textarea>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label for="lastName" class="">Stock</label>
+                    <input type="number" id="lastName" class="form-control" name="stock">
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label for="lastName" class="">Añadido por</label>
+                    <input type="number" id="lastName" class="form-control" name="id_user">
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <label class='input-check'>
+                      <input type="file" name="img">
+                    </label>
+                  </div>
+                </div>
+                <hr>
+                <input type="submit" value="Crear Producto">
+              </form>
+            </div>
+            <!--/.Panel 2-->
+          </div>
+          <!-- Pills panels -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

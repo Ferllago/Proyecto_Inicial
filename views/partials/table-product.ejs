@@ -1,0 +1,136 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-8 mb-4 margin-auto">
+        <ul class="nav md-pills nav-justified pills-primary font-weight-bold">
+          <li class="nav-item form-btn">
+            <a class="nav-link active" id="btn-form" data-toggle="tab" href="#tabCheckoutBilling123" role="tab"
+              onclick="selectBtn(this)">Filtrar Producto</a>
+          </li>
+        </ul>
+        <div class="tab-content pt-4">
+          <!--Panel 1-->
+          <div class="tab-pane fade in show active _form" id="tabCheckoutBilling123" role="tabpanel">
+            <form action="/products/filter" method="POST">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label for="">Tipo</label>
+                  <label class='input-select'>
+                    <select name='type'>
+                      <% let tipos = ["PC","Movil","Consola","Tv","SmartWacth"] %>
+                      <% tipos.forEach(product =>{ %>
+                      <option name="<%= product %>"><%= product %></option>
+                      <% })%>
+                    </select>
+                  </label>
+                </div>
+                <input type="submit" value="Filtrar Producto" class="clean-filter">
+                <a href="/products" class="clean-filter1"> Limpiar filtro</a>
+
+              </div>
+            </form>
+            
+          </div>
+          <!--/.Panel 1-->
+        </div>
+        <!-- Pills panels -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="card">
+  <div class="card-body">
+    <!-- Shopping Cart table -->
+    <div class="table-responsive">
+      <table class="table product-table">
+        <!-- Table head -->
+        <thead class="mdb-color lighten-5">
+          <tr>
+            <th>Nombre del producto</th>
+            <th class="font-weight-bold">
+              <strong>Marca</strong>
+            </th>
+            <th class="font-weight-bold">
+              <strong>Tipo</strong>
+            </th>
+            <th class="font-weight-bold">
+              <strong>Precio</strong>
+            </th>
+            <th class="font-weight-bold">
+              <strong>Stock</strong>
+            </th>
+            <th class="font-weight-bold">
+              <strong>Usuario</strong>
+            </th>
+            <th class="font-weight-bold">
+              <strong>Imagen</strong>
+            </th>
+            <th class="font-weight-bold">
+              <strong>Opciones</strong>
+            </th>
+            <th></th>
+          </tr>
+        </thead>
+        <!-- /.Table head -->
+        <!-- Table body -->
+        <tbody>
+
+          <% products.forEach(product =>{ %>
+          <tr>
+            <!-- Nombre del Producto -->
+            <td>
+              <h5 class="mt-3">
+                <strong><%= product.name_product %></strong>
+              </h5>
+            </td>
+            <!-- Marca -->
+            <td>
+              <p class="mt-3"> <%= product.brand %></p>
+
+            </td>
+            <!-- Tipo -->
+            <td>
+              <p class="mt-3"> <%= product.type %></p>
+
+            </td>
+            <!-- Precio -->
+            <td>
+              <p class="mt-3"> <%= product.price %></p>
+
+            </td>
+            <!-- Stock -->
+            <td>
+              <p class="mt-3"> <%= product.stock %></p>
+
+            </td>
+            <!-- Username -->
+            <td>
+              <p class="mt-3"> <%= product.username %></p>
+
+            </td>
+            <!-- Imagen -->
+            <td>
+
+              <img src="/uploads/<%= product.img %>" alt="" class="img-fluid z-depth-0" width=65>
+            </td>
+            <!-- Opciones -->
+            <td class="iconos-opciones">
+              <a href="/products/delete/<%= product.id_product %>"><img src="/images/trash-hover.png" alt=""></a>
+              <a href="/products/edit/<%= product.id_product %>"><img src="/images/edit-sin.png" alt=""></a>
+              <a href="/products/product/<%= product.id_product %>"><img src="images/magnifying-glass.png" alt=""></a>
+
+              <!-- Poner hover de que al poner por encima se ponga el icono en verde y rojo -->
+            </td>
+            <% })%>
+          </tr>
+        </tbody>
+        <!-- /.Table body -->
+      </table>
+    </div>
+    <!-- /.Shopping Cart table -->
+  </div>
+</div>
+

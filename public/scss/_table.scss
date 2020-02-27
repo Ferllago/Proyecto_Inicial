@@ -1,0 +1,23 @@
+thead{
+  background-color: $color;
+    color: white;
+    text-transform: uppercase;
+}
+   
+ .edit{
+  background-image: url(/images/edit-sin.png);
+  background-repeat: no-repeat;
+  &:hover{
+    background-image: url(/images/edit.png);
+    background-repeat: no-repeat;
+  }
+ }
+
+ .borrar{
+  background-image: url(/images/trash.png);
+  background-repeat: no-repeat;
+  &:hover{
+    background-image: url(/images/trash-hover.png);
+    background-repeat: no-repeat;
+  }
+ }

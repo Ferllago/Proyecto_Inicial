@@ -1,0 +1,33 @@
+@mixin nopad{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+@mixin flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin bot-rosa{
+    background-color:$rosita;
+    border: none;
+    border-radius: 35px;
+    font-size: 15px;
+    width: 200px;
+    height: 50px;            
+    color: white;
+    font-weight: bold;
+}
+@mixin bot-gris{
+    color: #4a4a4a !important;
+    background-color: transparent;
+    border: 1px solid #4a4a4a;
+    border-radius: 35px;
+    width: 200px;
+    height: 50px;            
+    margin-left: 5%;
+    font-weight: bold;
+}
+@mixin precioLista{
+    font-size:50px;
+    font-weight: 500;
+}

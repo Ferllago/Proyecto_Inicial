@@ -1,0 +1,71 @@
+<!-- TABLE -->
+
+<div class="card">
+    <div class="card-body">
+      <!-- Shopping Cart table -->
+      <div class="table-responsive">
+        <table class="table product-table">
+          <!-- Table head -->
+          <thead class="mdb-color lighten-5">
+            <tr>
+              <th>Nombre</th>
+              <th class="font-weight-bold">
+                <strong>Apellido</strong>
+              </th>
+              <th class="font-weight-bold">
+                <strong>Email</strong>
+              </th>
+              <th class="font-weight-bold">
+                <strong>Contraseña</strong>
+              </th>
+              <th class="font-weight-bold">
+                <strong>Administrador</strong>
+              </th>
+              <th class="font-weight-bold">
+                <strong>Opciones</strong>
+              </th>
+              <th></th>
+            </tr>
+          </thead>
+          <!-- /.Table head -->
+          <!-- Table body -->
+          <tbody>
+            <% products.forEach(product =>{%>
+            <tr>
+              <!-- Nombre -->
+              <td>
+                <h5 class="mt-3">
+                  <strong><%= product.name %></strong>
+                </h5>
+              </td>
+              <!-- Apellido -->
+              <td>
+                <%= product.lastname %>
+              </td>
+              <!-- Email -->
+              <td>
+                <%= product.email %>
+              </td>
+              <!-- Contraseña -->
+              <td>
+                <%= product.pass %>
+              </td>
+              <!-- Admi -->
+              <td>
+                <%= product.is_admin %>
+              </td>
+              <!-- Opciones -->
+              <td class="iconos-opciones">
+                <a href="users/delete/<%= product.id_user %>"><img src="/images/trash-hover.png" alt=""></a>
+                <a href="users/edit/<%= product.id_user %>"><img src="/images/edit-sin.png" alt=""></a>
+              </td>
+              <% })%>
+            </tr>
+          </tbody>
+          <!-- /.Table body -->
+        </table>
+      </div>
+      <!-- /.Shopping Cart table -->
+    </div>
+  </div>
+  <!-- Table -->

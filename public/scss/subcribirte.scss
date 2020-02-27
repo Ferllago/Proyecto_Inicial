@@ -1,0 +1,58 @@
+.banner{
+    border-top: 7px solid #beae9b;
+    background:white;
+    .banner-iz{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .ico-group{
+            width: 100%;
+            text-align: end;
+            img{
+                margin-right: 4%;
+                width: 40px;
+            }
+        }
+        
+    }
+    .banner-der{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color:white;
+        text-align: left;
+        h1{
+            margin:40px 0 40px 0;
+        }
+        
+    }
+
+}
+.sorteo{
+
+background-image: url(/images/bannerIndex/sorteo.jpg);
+height: 100%;
+background-repeat: no-repeat;
+    background-position: center;
+   
+}
+.sorteo-rell{
+    display: flex;
+justify-content: space-evenly;
+margin-bottom: 10px;
+
+    .btn-sorteo{
+        background: #ec7a2c;
+        color: #fff;
+        cursor: pointer;
+        padding: 0 12.5px;
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 4px;
+    }
+}
+
+.margin-bottom-sorteo{
+    margin-bottom: 22px !important;
+}

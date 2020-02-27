@@ -1,0 +1,321 @@
+.clean-filter{
+ 
+    margin-top: 31px !important;
+  
+}
+.clean-filter1{
+ 
+    color: white;
+    background-color:#00b8ff;
+    margin-left: 15px;
+    height: 50px;
+    padding: 14px;
+    margin-top: 31px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover{
+        color: white;
+        background-color:#0a86b8;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+
+
+input{
+    height: 34px;
+}
+
+
+.form-btn{
+    
+    a{
+        color:$color;
+      
+        &:hover{
+            background-color:$color;
+            color:white!important;
+
+        }
+        &:focus{
+            background-color:$color;
+            color:white!important;
+        }
+    
+
+    }
+    
+}
+.btn-active{
+    background-color:$color;
+    color:white!important;
+}
+.margin-auto{
+    margin: auto;
+}
+.margin-top-btn-form-submit{
+    margin-top: 55px !important;
+}
+
+textarea{
+    width: 63vw;
+
+}
+
+.title-mod{
+    background-color: #ec7a2c;
+    color: white !important;
+}
+.container-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+    margin: auto;
+    ._form {
+        width: 100%;
+        display: block;
+        }
+    .form-content{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+._form .input-select,
+._form [type="checkbox"],
+._form [type="checkbox"] + span,
+._form [type="password"],
+._form [type="radio"],
+._form [type="radio"] + span,
+._form [type="submit"],
+._form [type="text"],
+._form [type="number"],
+._form [type="email"]{
+display: block;
+height: 50px;
+line-height: 50px;
+color: #aaa;
+}
+._form [type="password"],
+._form [type="submit"],
+._form [type="text"],
+._form [type="number"],
+._form [type="email"]{
+padding: 0 12.5px;
+}
+._form [type="submit"] {
+background: #ec7a2c;
+margin-top: 25px;
+color: #fff;
+cursor: pointer;
+}
+._form textarea {
+padding: 12.5px;
+min-height: 100px;
+resize: vertical;
+color: #aaa;
+}
+._form label.input-check {
+float: left;
+margin: 0 5px 5px 0;
+padding: 0 12.5px;
+display: block;
+}
+._form label.input-check:after,
+._form label.input-check:before {
+display: block;
+width: 100%;
+clear: both;
+content: "";
+}
+._form label.input-check [type="checkbox"],
+._form label.input-check [type="radio"] {
+margin-right: 12.5px;
+}
+._form label.input-select {
+border-radius: 4px;
+}
+._form label.input-select select {
+width: 100%;
+height: 50px;
+line-height: 50px;
+text-indent: 5px;
+position: relative;
+top: -2px;
+color: #aaa;
+background: 0 0;
+}
+._form label.input-check,
+._form label.input-select {
+cursor: pointer;
+}
+._form fieldset:not(:first-of-type) {
+margin-top: 33.33px;
+}
+._form legend {
+margin-bottom: 10px;
+}
+._form .input-select,
+._form [type="password"],
+._form [type="text"],
+._form [type="email"],
+._form [type="number"],
+._form textarea {
+border: 2px solid #f5f5f5;
+}
+._form [type="submit"] {
+border: 2px solid #ec7a2c;
+}
+._form .input-select,
+._form .input-text,
+._form [type="checkbox"] + span:before,
+._form [type="password"],
+._form [type="submit"],
+._form [type="text"],
+._form textarea,
+._form [type="number"],
+._form [type="email"]{
+border-radius: 4px;
+}
+._form [type="radio"] + span:before {
+border-radius: 50%;
+}
+._form [type="checkbox"],
+._form [type="radio"] {
+display: none;
+}
+._form [type="checkbox"] + span:before,
+._form [type="radio"] + span:before {
+position: relative;
+top: -1px;
+content: "";
+width: 18px;
+height: 18px;
+display: inline-block;
+vertical-align: middle;
+float: none;
+margin-right: 12.5px;
+background: #f5f5f5;
+}
+._form .input-select,
+._form [type="password"],
+._form [type="text"],
+._form [type="number"],
+._form [type="email"],
+._form textarea {
+background: #f5f5f5;
+}
+._form [type="checkbox"],
+._form [type="checkbox"] + span,
+._form [type="password"],
+._form [type="radio"],
+._form [type="radio"] + span,
+._form [type="submit"],
+._form [type="text"],
+._form [type="number"],
+._form [type="email"],
+._form fieldset,
+._form label,
+._form label input + span:before,
+._form legend,
+._form textarea {
+-webkit-transition-property: background-color, color, border;
+transition-property: background-color, color, border;
+-webkit-transition-duration: 0.3s;
+transition-duration: 0.3s;
+-webkit-transition-timing-function: ease;
+transition-timing-function: ease;
+-webkit-transition-delay: 0s;
+transition-delay: 0s;
+}
+._form [type="submit"]:hover {
+background: #d86618;
+border: 2px solid #c45204;
+}
+._form .input-select:hover,
+._form [type="password"]:hover,
+._form [type="text"]:hover,
+._form [type="email"]:hover,
+._form [type="number"]:hover,
+._form textarea:hover {
+background: #fafafa;
+border-color: #e1e1e1;
+color: #969696;
+}
+._form .input-select:active,
+._form [type="password"]:active,
+._form [type="text"]:active,
+._form [type="number"]:active,
+._form [type="email"]:active,
+._form textarea:active {
+background: #fafafa;
+border-color: #cdcdcd;
+color: #828282;
+}
+._form .input-select:focus,
+._form [type="password"]:focus,
+._form [type="text"]:focus,
+._form [type="number"]:focus,
+._form [type="email"]:focus,
+._form textarea:focus {
+background: #fafafa;
+border-color: #ec7a2c;
+color: #ec7a2c;
+}
+._form [type="checkbox"]:checked,
+._form [type="checkbox"]:checked + span,
+._form [type="radio"]:checked,
+._form [type="radio"]:checked + span {
+color: #ec7a2c;
+}
+._form [type="checkbox"]:checked + span:before,
+._form [type="radio"]:checked + span:before {
+background: #ec7a2c;
+}
+._form label:hover [type="checkbox"]:not(:checked) + span:before,
+._form label:hover [type="radio"]:not(:checked) + span:before {
+background: #ebebeb;
+}
+#form legend {
+color: #ec7a2c;
+}
+h1 {
+margin: auto;
+text-align: center;
+font-weight: 300;
+margin-bottom: 40px;
+color: #ec7a2c !important;
+}
+#form {
+position: relative;
+background: #fff;
+max-width: 500px;
+margin: auto;
+padding: 25px;
+border-top: 10px solid #ec7a2c;
+border-radius: 4px;
+box-shadow: -1px 1px 8px 0 rgba(0,0,0,.06);
+width: 500px;
+}
+#form * {
+font-size: 14px;
+}
+#form [type="password"],
+#form [type="submit"],
+#form [type="text"],
+#form [type="number"],
+#form [type="email"],
+#form textarea {
+width: 100%;
+display: block;
+}
+#form legend {
+font-weight: 600;
+font-size: 17px;
+letter-spacing: 1px;
+}

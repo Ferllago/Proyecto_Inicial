@@ -1,0 +1,40 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-family: Open Sans,arial,sans-serif;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: none;
+}
+
+body{
+  background-color: #ebeced!important;
+}
+
+@import './variable.scss';
+
+@import './mixin.scss';
+
+@import './navbar.scss';
+
+@import './button.scss';
+
+@import './table.scss';
+
+@import './form.scss';
+
+@import './cards.scss';
+
+@import './card-product.scss';
+
+@import './onlyproducts.scss';
+
+@import './subcribirte.scss';
+
+@import './footer.scss';
+
+@import './query.scss';
+
+

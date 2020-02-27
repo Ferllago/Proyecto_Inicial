@@ -1,0 +1,26 @@
+.banner {
+  background: orange;
+}
+.banner .banner-iz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner .banner-iz .ico-group {
+  width: 100%;
+  text-align: end;
+}
+.banner .banner-iz .ico-group img {
+  margin-right: 4%;
+  width: 40px;
+}
+.banner .banner-der {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: left;
+}
+.banner .banner-der h1 {
+  margin: 40px 0 40px 0;
+}

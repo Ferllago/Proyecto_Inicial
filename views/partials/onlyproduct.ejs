@@ -1,0 +1,34 @@
+<!-- Copia -->
+<div class="container">
+<div class='row'>
+  <div class='product--blue'>
+    <div class='product_inner'>
+      <img src='/uploads/<%= products.img %>' width='300'>
+      <hr class="linea"/>
+      <p class="title"><%= products.name_product %></p>
+      <br>
+      <hr class="line" title="Marca">
+      <p class="brand" ><%= products.brand %></p>
+      <hr class="line" title="Descripción del Producto">
+      <p class="descr"><%= products.description %></p>
+      <hr class="line" title="Precio">
+      <div>
+        <span class="price"><%= products.price %> €</span>
+        <span class="stock">Quedan <%= products.stock %></span>
+      </div>
+     
+      <hr class="linea"/>
+      <div class="">
+        <a href="/products/delete/<%= products.id_product %>"><img src="/images/trash-hover.png" alt=""></a>
+        <a href="/products/edit/<%= products.id_product %>"><img src="/images/edit-sin.png" alt=""></a>
+      </div>
+    </div>
+    <div class='product_overlay'>
+      <h2>Added to basket</h2>
+      <i class='fa fa-check'></i>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Copia -->
+

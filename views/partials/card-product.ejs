@@ -1,0 +1,62 @@
+<!-- 1 -->
+<div class="container">
+  <h1 class="title-inicio">Ultimos productos</h1>
+  <hr class="hr-inicio">
+  <div class='row'>
+    <% let cont = 0; %>
+    <% products.forEach(product =>{%>
+        <% if (product.stock <= 5 && cont != 4) { %>
+        <div class='product--blue'>
+          <div class='product_inner'>
+            <img src='/uploads/<%= product.img %>' width='300'>
+            <hr class="linea"/>
+            <p class="title"><%= product.name_product %></p>
+            <hr class="linea"/>
+            <p>Marca: <%= product.brand %></p>
+            <p class="stock">Quedan <%= product.stock %></p>
+            <p><%= product.price %> €</p>
+            <div class="iconos-opciones">
+              <a href="products/delete/<%= product.id_product %>"><img src="images/trash-hover.png" class="borrar" alt=""></a>
+              <a href="products/edit/<%= product.id_product %>"><img src="images/edit-sin.png" alt="" class="edit"></a>
+              <a href="products/product/<%= product.id_product %>"><img src="images/magnifying-glass.png" class="ver" alt=""></a>  
+            </div>
+          </div>
+          <div class='product_overlay'>
+            <h2>Added to basket</h2>
+            <i class='fa fa-check'></i>
+          </div>
+        </div>
+        <% cont++ %>
+        <% } %>
+        <% })%>
+  </div>
+  </div>
+<!-- 2 -->
+<div class="container">
+<h1 class="title-inicio">Lista de productos</h1>
+<hr class="hr-inicio">
+<div class='row'>
+  <% products.slice(0,8).forEach(product =>{%>
+  <div class='product--blue'>
+    <div class='product_inner'>
+      <img src='/uploads/<%= product.img %>' width='300'>
+      <hr class="linea"/>
+      <p class="title"><%= product.name_product %></p>
+      <hr class="linea"/>
+      <p>Marca: <%= product.brand %></p>
+      <p class="stock">Quedan <%= product.stock %></p>
+      <p><%= product.price %> €</p>
+      <div class="iconos-opciones">
+        <a href="products/delete/<%= product.id_product %>"><img src="images/trash-hover.png" class="borrar" alt=""></a>
+        <a href="products/edit/<%= product.id_product %>"><img src="images/edit-sin.png" alt="" class="edit"></a>
+        <a href="products/product/<%= product.id_product %>"><img src="images/magnifying-glass.png" class="ver" alt=""></a>  
+      </div>
+    </div>
+    <div class='product_overlay'>
+      <h2>Added to basket</h2>
+      <i class='fa fa-check'></i>
+    </div>
+  </div>
+  <% })%>
+</div>
+</div>

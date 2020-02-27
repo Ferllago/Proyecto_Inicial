@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="container-form _form">
+        <div id='form' class='_form form-content'>
+          <form action='/' method='POST' name='addUser'>
+            <fieldset>
+              <legend>Nombre</legend>
+              <input type='text' name='name_product'/>
+            </fieldset>
+            <fieldset>
+              <legend>Marca</legend>
+              <input type='text' name='brand'  />
+            </fieldset>
+            <fieldset>
+              <legend>Tipo</legend>
+              <label class='input-select'>
+                <select name='type'>
+                  <option value='PC'>PC</option>
+                  <option value='Consola'>Consola</option>
+                  <option value='Movil'>Movil</option>
+                  <option value='Tv'>Tv</option>
+                </select>
+              </label>
+            </fieldset>
+            <fieldset>
+              <legend>Descripción</legend>
+              <textarea name='description'></textarea>
+            </fieldset>
+            <fieldset>
+              <legend>Precio</legend>
+              <input type='number' name='price'  />
+            </fieldset>
+            <fieldset>
+              <legend>Stock</legend>
+              <input type='number' name='stock'  />
+            </fieldset>
+            <fieldset>
+              <legend>Añadido</legend>
+              <input type='number' name='id_user'  />
+            </fieldset>
+            <fieldset>
+            <input type='submit' name='submit' value='Crear Producto' />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <% products.forEach(product =>{%>
+        <div class="blog-card">
+          <div class="meta">
+            <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+          </div>
+          <div class="description">
+            <h1><%= product.name_product %></h1>
+            <h2>
+              <span><%= product.brand %></span>
+              <span>/</span>
+              <span><%= product.type %></span></h2>
+            <p><%= product.description %></p>
+            <p class="read-mored">
+              <span>Precio </span><a href="#"><%= product.price %></a><span> €</span>
+            </p>
+            <div>
+              <p>
+                <a href="/delete/<%= product.id %>"><img src="images/eliminar.png" alt=""></a>
+                <a href="/edit/<%= product.id %>"><img src="images/pencil.png" alt=""></a>
+              </p>
+            </div>
+         
+          </div>
+        </div>
+        <% })%>
+    </div>
+  </div>
